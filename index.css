@@ -1,5 +1,6 @@
 body{
-	background: #3A4242
+	background: white;
+	width: 100%;
 }
 .container-fluid{
 	padding-right:0;
@@ -7,6 +8,10 @@ body{
 	margin-right:auto;
 	margin-left:auto;
 }
+#tglr{
+	background: #D9D9D9;
+}
+div{width:100%;}
 #top{
 	padding-bottom: 0;
 	margin-bottom: 0;
@@ -20,6 +25,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+	width: 100%;
 }
 #logo{
 	margin-right: 10px;
@@ -27,9 +33,18 @@ body{
 	border-radius: 5px;
 	border-style: solid;
 	border-width:thin;
+	color: red;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
 }
 #photo{
-	width: 100%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+}
+#navb{
+	background: rgba(0, 0, 40, .4);
+}
+#person{
+	margin-top:10px;
+	padding-left: 10px;
 }
