@@ -40,6 +40,7 @@ div{width:100%;}
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 10px;
 }
 #navb{
 	background: rgba(0, 0, 40, .4);
@@ -47,4 +48,19 @@ div{width:100%;}
 #person{
 	margin-top:10px;
 	padding-left: 10px;
+}
+#cntr{
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+#chartbg{
+	background-image: url("cloud.jpg");
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
