@@ -1,4 +1,11 @@
 // The canvas is 400x400
+class Node{
+  constructor(x,y,next){
+    this.x=x;
+    this.y=y;
+    this.next=next;
+  }
+}
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
