@@ -2,17 +2,18 @@
 <div>
   <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000; background:white;">
 </canvas>
+<input style="margin-left:10%; direction:rtl" onchange="speedchange()" type="range" min="100" max="500" value="300" id="myRange">
 </div>
-<button style="height:20px;width:80px" onclick="speedup()">speed up</button>
-
-
-<button style="height:20px;width:80px" onclick="speeddown()">slow down</button>
-
 */
-
+var spotX=Math.floor(Math.random()*391),spotY=Math.floor(Math.random()*391);
+spotX=spotX-spotX%10;
+spotY=spotY-spotY%10;
 var c = document.getElementById("myCanvas");
+var inp=document.getElementById("myRange");
 var ctx = c.getContext("2d");
 var snake=[[0,0],[10,0],[20,0]];
+
+
 
 function update(x,y){
   var curr=snake[0];
@@ -58,6 +59,7 @@ ctx.fillStyle="red";
         ctx.fillRect(element[0],element[1],10,10);
       }
     );
+    ctx.fillRect(spotX,spotY,10,10);
 
 }
 document.onkeydown = checkKey;
@@ -98,24 +100,10 @@ function checkKey(e) {
     }
 
 }
-var speed=300;
-function speedup(){
-  if(speed<=100){
-    alert("too much");
-    return
-  }
-  speed-=10;
+var speed=inp.value;
+function speedchange(){
+  speed=inp.value;
   clearInterval(timer);
   timer=setInterval(draw, speed);
 }
-function speeddown(){
-  if(speed>=500){
-    alert("too slow");
-    return;
-  }
-  speed+=10;
-  clearInterval(timer);
-  timer=setInterval(draw, speed);
-}
-
 var timer=setInterval(draw, speed);
