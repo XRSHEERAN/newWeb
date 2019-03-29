@@ -13,7 +13,12 @@ var inp=document.getElementById("myRange");
 var ctx = c.getContext("2d");
 var snake=[[0,0],[10,0],[20,0]];
 
-
+function randomGen(){
+  spotX=Math.floor(Math.random()*391);
+  spotY=Math.floor(Math.random()*391);
+  spotX=spotX-spotX%10;
+  spotY=spotY-spotY%10;
+}
 
 function update(x,y){
   var curr=snake[0];
@@ -29,8 +34,17 @@ function update(x,y){
     x%=400;
     y%=400;
   }
+  
   snake.unshift([x,y]);
-  snake.pop();
+  if(x!=spotX || y!=spotY){
+    
+    
+    snake.pop();
+    
+  }
+  else{
+    randomGen();
+  }
 }
 
 var num=0,up=false,down=false,right=false,left=false;
