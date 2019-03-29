@@ -67,9 +67,21 @@ if(down){
 
 
 ctx.fillStyle="red";
+var hx=snake[0][0],hy=snake[0][1],count=0;
+
   snake.forEach(
       function(element){
-        
+        if(element[0]==hx && element[1]==hy){
+          
+          if(count==1){
+            alert('Boom')
+            up=false;
+            right=false;
+            left=false;
+            down=false;
+          }
+          ++count;
+        }
         ctx.fillRect(element[0],element[1],10,10);
       }
     );
